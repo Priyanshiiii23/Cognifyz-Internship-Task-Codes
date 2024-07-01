@@ -1,0 +1,18 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Loading the dataset
+df = pd.read_csv('C:\\Users\\priya\\OneDrive\\Desktop\\Internship Data Cognifyz\\Dataset.csv')
+print(df.head())
+
+#Expecting top 3 data sets as per the dataset
+top_cuisines = df['Cuisines'].value_counts().head(3)
+total_restaurants = len(df)
+top_cuisines_percentage = (top_cuisines / total_restaurants) * 100
+
+
+print("Top Three Cuisines:")
+print(top_cuisines)
+
+print("\nPercentage of Restaurants Serving Each Top Cuisine:")
+print(top_cuisines_percentage)
